@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Us — Sojourn</title>
+<meta name="description" content="Sojourn is recruiting software engineers and product managers at every organizational level to do something very big and good.">
+<link rel="icon" href="images/sojourn-icon-ink.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="images/sojourn-icon-ink.png" alt="Sojourn">
+      <span>Sojourn</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="recruiting.html" class="active">Join Us</a>
+      <a href="founders.html">Founders</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-header">
+    <div class="wrap">
+      <h1>Join Us</h1>
+      <p class="lede">We're recruiting software engineers and product managers at every organizational level to do something very big and good. To toss your hat in the ring, tell us a little bit about yourself!</p>
+    </div>
+  </section>
+
+  <section class="app-form">
+    <div class="wrap">
+      <form id="application-form">
+        <div class="field">
+          <label for="app-product">Describe a product you've built and how customers liked it:</label>
+          <textarea id="app-product" name="product" placeholder="(100 words or less.)" required></textarea>
+        </div>
+        <div class="field">
+          <label for="app-linkedin">Share a link to your LinkedIn profile or product portfolio:</label>
+          <input type="url" id="app-linkedin" name="linkedin" placeholder="https://" required>
+        </div>
+        <div class="field">
+          <label for="app-why">Why are you interested in Sojourn?</label>
+          <textarea id="app-why" name="why" placeholder="(100 words or less.)" required></textarea>
+        </div>
+        <div class="cta-row">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <p class="form-status" id="application-status"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="look-for">
+    <div class="wrap">
+      <h2>What We Look For</h2>
+      <p>What we look for in recruits:</p>
+      <ul>
+        <li>Embraced frontier AI tools to generate reliable, high-scale production code</li>
+        <li>Learned about a business problem by working directly with stakeholders</li>
+        <li>Brought new products to market that customers love</li>
+        <li>Recruited and led high-performing teams</li>
+        <li>Directly and significantly contributed to product development</li>
+        <li>Translated open-ended business problems into product designs</li>
+        <li>Took responsibility for the result and found a way to win</li>
+      </ul>
+      <p class="commitment">You must be committed to building software that contributes to our society's well-being.</p>
+    </div>
+  </section>
+
+  <section class="principles">
+    <div class="wrap">
+      <h2 class="section-label">Our Product Culture</h2>
+      <div class="principle">
+        <h3>Accountable for Outcomes, Not Code</h3>
+        <p>We expect each engineer to work at every layer of the technical stack, ensuring AI-generated code is scalable, secure and reliable. Beyond each of the technical layers, we also want engineers to work at the business layer, to understand the problem our software is solving. An engineer should be accountable for outcomes, not code.</p>
+      </div>
+      <div class="principle">
+        <h3>Efficiency in Code, Efficiency in Our Organization</h3>
+        <p>To be able to decide which products are worth building, engineers have to understand our business and how it makes money. We're as obsessed with efficiency in our organization as in our code &mdash; logically because profits fund our mission, but viscerally because shipping products and solving problems is what makes us happy.</p>
+      </div>
+      <div class="principle">
+        <h3>Clear Decisions Over Consensus</h3>
+        <p>We're a doer culture: all of us do the work. We make arguments in code, deliberating on irreversible decisions, and otherwise valuing speed. We favor clear decisions over consensus. If we disagree, we say so, but that also means imagining a finding that could change our minds.</p>
+      </div>
+      <div class="principle">
+        <h3>Excited and Curious About the Future of Coding</h3>
+        <p>Nobody knows exactly how AI coding will reshape engineering organizations over the next five years. Our team is excited and curious to find out. We love to work face to face, with likely engineering hubs in Seattle for member experience, San Francisco for the clinical platform, and New York for the claims system.</p>
+      </div>
+      <div class="principle">
+        <h3>A Culture of Ideas and Respect</h3>
+        <p>We're restless, opinionated, and brimming with ideas &mdash; but we treat everyone with respect; we believe great engineers come from every walk of life. We're honored by the old friends who have worked with us from company to company, but we're also eager to bring in new blood.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 Sojourn</span>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('application-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var status = document.getElementById('application-status');
+    // Placeholder: wire this up to the application endpoint (e.g. an API Gateway + Lambda function URL).
+    status.textContent = "Thanks for applying — we'll be in touch.";
+    status.classList.add('visible');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>

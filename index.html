@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sojourn — Better healthcare, lower cost</title>
+<meta name="description" content="Sojourn combines a software company, a group of doctors and nurses, and an insurance company to give working people better healthcare at a lower cost.">
+<link rel="icon" href="images/sojourn-icon-ink.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="images/sojourn-icon-ink.png" alt="Sojourn">
+      <span>Sojourn</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="recruiting.html">Join Us</a>
+      <a href="founders.html">Founders</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Sojourn's mission is to give working people better healthcare at a lower cost.</h1>
+      <p class="lede">Since technology by itself can't fix a broken system, we're rebuilding the whole system to make it work together for you &mdash; combining a software company, a group of doctors and nurses, and an insurance company.</p>
+      <div class="cta-row">
+        <a class="btn btn-secondary" href="recruiting.html">Join Us</a>
+        <a class="btn btn-secondary" href="founders.html">Founders</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="capture">
+    <div class="wrap">
+      <form class="email-form" id="capture-form">
+        <input type="email" id="capture-email" name="email" placeholder="you@email.com" required aria-label="Email address">
+        <button type="submit" class="btn btn-primary">Keep Me Posted</button>
+      </form>
+      <p class="form-status" id="capture-status"></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 Sojourn</span>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('capture-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var status = document.getElementById('capture-status');
+    // Placeholder: wire this up to the signup endpoint (e.g. an API Gateway + Lambda function URL).
+    status.textContent = "Thanks — we'll be in touch.";
+    status.classList.add('visible');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>

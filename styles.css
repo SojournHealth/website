@@ -1,0 +1,491 @@
+/* Sojourn — shared styles */
+
+:root {
+  --ink: #1a232e;
+  --ink-soft: #4a5563;
+  --paper: #faf9f6;
+  --paper-alt: #f2f0ea;
+  --line: #e3e0d6;
+  --accent: #3c6e5a;
+  --max-width: 1040px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 1.2em;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* Header */
+
+.site-header {
+  padding: 32px 0 8px;
+  border-bottom: 1px solid transparent;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand img {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+.brand span {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+nav.main-nav {
+  display: flex;
+  gap: 32px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+nav.main-nav a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+nav.main-nav a:hover,
+nav.main-nav a.active {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 96px;
+  padding: 28px 0 40px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.site-footer .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.site-footer a {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-footer a:hover {
+  color: var(--ink);
+}
+
+/* Hero */
+
+.hero {
+  padding: 72px 0 56px;
+}
+
+.hero .eyebrow {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 4vw, 42px);
+  max-width: 15ch;
+  margin-bottom: 28px;
+}
+
+.hero .lede {
+  font-size: 19px;
+  max-width: 62ch;
+  color: var(--ink-soft);
+}
+
+/* Email capture form */
+
+.capture {
+  padding: 48px 0 8px;
+  border-top: 1px solid var(--line);
+}
+
+.capture h2 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+form.email-form {
+  display: flex;
+  gap: 12px;
+  max-width: 460px;
+  flex-wrap: wrap;
+}
+
+.email-form input[type="email"] {
+  flex: 1 1 240px;
+  padding: 13px 16px;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  border: 1px solid #c9c5b8;
+  border-radius: 3px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.email-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn-primary:hover {
+  background: #000;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+}
+
+.btn-secondary:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.form-note {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 10px;
+}
+
+.form-note a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.form-status {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  margin-top: 14px;
+  display: none;
+}
+
+.form-status.visible {
+  display: block;
+}
+
+/* Recruiting page */
+
+.page-header {
+  padding: 64px 0 8px;
+}
+
+.page-header .eyebrow {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.page-header h1 {
+  font-size: clamp(28px, 3.6vw, 38px);
+  max-width: 18ch;
+}
+
+.page-header .lede {
+  font-size: 18px;
+  color: var(--ink-soft);
+  max-width: 66ch;
+}
+
+.app-form {
+  padding: 24px 0 8px;
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+}
+
+.field {
+  margin-bottom: 22px;
+  max-width: 560px;
+}
+
+.field label {
+  display: block;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="url"],
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  border: 1px solid #c9c5b8;
+  border-radius: 3px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.field textarea {
+  min-height: 110px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.principles {
+  padding: 40px 0;
+  margin-top: 48px;
+}
+
+.section-label {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.principle {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.principle:first-child {
+  padding-top: 0;
+}
+
+.principle:last-child {
+  border-bottom: none;
+}
+
+.principle h4 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.principle p {
+  color: var(--ink-soft);
+  max-width: 68ch;
+  margin-bottom: 0;
+}
+
+.look-for {
+  padding: 8px 0 40px;
+  margin-top: 8px;
+}
+
+.look-for ul {
+  margin: 18px 0 22px;
+  padding-left: 22px;
+}
+
+.look-for li {
+  margin-bottom: 10px;
+  max-width: 66ch;
+}
+
+.look-for .commitment {
+  color: var(--ink-soft);
+  max-width: 66ch;
+}
+
+/* Founders page */
+
+.founders-list {
+  padding: 16px 0 40px;
+}
+
+.founder {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  max-width: 780px;
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
+
+.founder:first-child {
+  border-top: none;
+}
+
+.founder-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--paper-alt);
+}
+
+.founder-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.founder-body h2 {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.founder-body .title {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.founder-body p {
+  color: var(--ink-soft);
+  max-width: 66ch;
+}
+
+/* Responsive */
+
+@media (max-width: 720px) {
+  nav.main-nav {
+    gap: 20px;
+  }
+
+  .founder {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-photo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .site-footer .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    padding: 0 20px;
+  }
+
+  nav.main-nav {
+    font-size: 12px;
+    gap: 14px;
+  }
+
+  .brand span {
+    font-size: 15px;
+  }
+}
