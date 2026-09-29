@@ -35,6 +35,7 @@
   <section class="app-form">
     <div class="wrap">
       <form id="application-form">
+        <input type="hidden" name="formType" value="application">
         <div class="field">
           <label for="app-product">Describe a product you've built and how customers liked it:</label>
           <textarea id="app-product" name="product" placeholder="(100 words or less.)" required></textarea>
@@ -107,13 +108,27 @@
 </footer>
 
 <script>
+  // Replace with the "Web app URL" from your Apps Script deployment
+  // (see apps-script/Code.gs in the repo for setup steps).
+  var SUBMIT_ENDPOINT = 'REPLACE_WITH_YOUR_APPS_SCRIPT_URL';
+
   document.getElementById('application-form').addEventListener('submit', function (e) {
     e.preventDefault();
+    var form = this;
     var status = document.getElementById('application-status');
-    // Placeholder: wire this up to the application endpoint (e.g. an API Gateway + Lambda function URL).
+
+    fetch(SUBMIT_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new FormData(form)
+    }).catch(function () {
+      // Apps Script's no-cors response can't be read either way, so we
+      // show the same confirmation on success or network error.
+    });
+
     status.textContent = "Thanks for applying — we'll be in touch.";
     status.classList.add('visible');
-    this.reset();
+    form.reset();
   });
 </script>
 

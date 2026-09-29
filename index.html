@@ -39,6 +39,7 @@
   <section class="capture">
     <div class="wrap">
       <form class="email-form" id="capture-form">
+        <input type="hidden" name="formType" value="newsletter">
         <input type="email" id="capture-email" name="email" placeholder="you@email.com" required aria-label="Email address">
         <button type="submit" class="btn btn-primary">Keep Me Posted</button>
       </form>
@@ -55,13 +56,27 @@
 </footer>
 
 <script>
+  // Replace with the "Web app URL" from your Apps Script deployment
+  // (see apps-script/Code.gs in the repo for setup steps).
+  var SUBMIT_ENDPOINT = 'REPLACE_WITH_YOUR_APPS_SCRIPT_URL';
+
   document.getElementById('capture-form').addEventListener('submit', function (e) {
     e.preventDefault();
+    var form = this;
     var status = document.getElementById('capture-status');
-    // Placeholder: wire this up to the signup endpoint (e.g. an API Gateway + Lambda function URL).
+
+    fetch(SUBMIT_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new FormData(form)
+    }).catch(function () {
+      // Apps Script's no-cors response can't be read either way, so we
+      // show the same confirmation on success or network error.
+    });
+
     status.textContent = "Thanks — we'll be in touch.";
     status.classList.add('visible');
-    this.reset();
+    form.reset();
   });
 </script>
 
