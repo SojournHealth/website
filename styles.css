@@ -294,9 +294,8 @@ form.email-form {
 }
 
 .app-form {
-  padding: 24px 0 8px;
-  border-top: 1px solid var(--line);
-  margin-top: 40px;
+  padding: 0 0 8px;
+  margin-top: 8px;
 }
 
 .field {
@@ -341,18 +340,15 @@ form.email-form {
 }
 
 .principles {
-  padding: 40px 0;
-  margin-top: 48px;
+  padding: 12px 0 40px;
+  margin-top: 12px;
 }
 
-.section-label {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 24px;
+.section-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 20px;
 }
 
 .principle {
@@ -380,7 +376,7 @@ form.email-form {
 }
 
 .look-for {
-  padding: 8px 0 40px;
+  padding: 8px 0 12px;
   margin-top: 8px;
 }
 
