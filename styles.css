@@ -154,13 +154,13 @@ nav.main-nav a.active {
 
 .hero h1 {
   font-size: clamp(30px, 4vw, 42px);
-  max-width: 15ch;
+  max-width: 640px;
   margin-bottom: 28px;
 }
 
 .hero .lede {
   font-size: 19px;
-  max-width: 62ch;
+  max-width: 640px;
   color: var(--ink-soft);
 }
 
