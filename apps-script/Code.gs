@@ -29,7 +29,8 @@ var APPLICATION_HEADERS = [
   'Timestamp',
   'Product built / how customers liked it',
   'LinkedIn or portfolio link',
-  'Why interested in Sojourn'
+  'Why interested in Sojourn',
+  'Email'
 ];
 
 function doPost(e) {
@@ -69,12 +70,14 @@ function handleApplication(params) {
     timestamp,
     params.product || '',
     params.linkedin || '',
-    params.why || ''
+    params.why || '',
+    params.email || ''
   ]);
 
   notify(
     'New Sojourn application',
-    'Product: ' + (params.product || '(none)') +
+    'Email: ' + (params.email || '(none)') +
+    '\n\nProduct: ' + (params.product || '(none)') +
     '\n\nLinkedIn/portfolio: ' + (params.linkedin || '(none)') +
     '\n\nWhy Sojourn: ' + (params.why || '(none)') +
     '\n\nTime: ' + timestamp
