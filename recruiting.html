@@ -37,12 +37,12 @@
       <form id="application-form">
         <input type="hidden" name="formType" value="application">
         <div class="field">
-          <label for="app-product">Describe a product you've built and how customers liked it:</label>
+          <label for="app-product">Please describe a product you've built and how customers liked it:</label>
           <textarea id="app-product" name="product" placeholder="(100 words or less.)" required></textarea>
         </div>
         <div class="field">
-          <label for="app-linkedin">Share a link to your LinkedIn profile or product portfolio:</label>
-          <input type="url" id="app-linkedin" name="linkedin" placeholder="https://" required>
+          <label for="app-linkedin">Please share a link to your LinkedIn profile or product portfolio:</label>
+          <input type="text" inputmode="url" autocapitalize="off" spellcheck="false" id="app-linkedin" name="linkedin" placeholder="linkedin.com/in/yourname" required>
         </div>
         <div class="field">
           <label for="app-why">Why are you interested in Sojourn?</label>
@@ -94,7 +94,7 @@
       </div>
       <div class="principle">
         <h3>Excited and Curious About the Future of Coding</h3>
-        <p>Nobody knows exactly how AI coding will reshape engineering organizations over the next five years. Our team is excited and curious to find out. We love to work face to face, with likely engineering hubs in Seattle for member experience, San Francisco for the clinical platform, and New York for the claims system.</p>
+        <p>Nobody knows exactly how AI coding will reshape engineering organizations over the next five years. Our team is excited and curious to find out. We love to work face to face, with likely engineering hubs in Seattle for member experience, San Francisco for the clinical platform, and Austin for the claims system.</p>
       </div>
       <div class="principle">
         <h3>A Culture of Ideas and Respect</h3>
@@ -116,10 +116,23 @@
   // (see apps-script/Code.gs in the repo for setup steps).
   var SUBMIT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyj23ioniOyW1YCrYyZCeESBpfDZqo2tGNpsuQhv-GRID-kUnVPWSoJRYg9zKq8dvjiwA/exec';
 
+  // Accept links typed without "https://" (e.g. "linkedin.com/in/jane")
+  // by adding it, rather than rejecting the submission.
+  var linkField = document.getElementById('app-linkedin');
+  function addHttps() {
+    var value = linkField.value.trim();
+    if (value && !/^[a-z][a-z0-9+.-]*:\/\//i.test(value)) {
+      value = 'https://' + value.replace(/^\/+/, '');
+    }
+    linkField.value = value;
+  }
+  linkField.addEventListener('blur', addHttps);
+
   document.getElementById('application-form').addEventListener('submit', function (e) {
     e.preventDefault();
     var form = this;
     var status = document.getElementById('application-status');
+    addHttps();
 
     fetch(SUBMIT_ENDPOINT, {
       method: 'POST',
